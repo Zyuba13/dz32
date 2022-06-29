@@ -1,8 +1,8 @@
 fun main() {
-    val commission = commissionСalculation("Vk Pay", 0,1000_00)
+    val commission = commissionCalculation("Vk Pay", 0,1000_00)
     println("Комиссия составит $commission копеек")
 }
-fun commissionСalculation(card: String, previousTransfer: Int, amount: Int ): Int {
+fun commissionCalculation(card: String, previousTransfer: Int, amount: Int ): Int {
     var commission = when{
         card == "Vk Pay" -> (amount*0.0).toInt()
         (card == "MasterCard" || card == "Maestro") && previousTransfer <= 75000_00 -> (amount*0.0).toInt()
